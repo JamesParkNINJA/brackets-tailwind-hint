@@ -13,7 +13,7 @@ In window Menu:
 
 > - Help
 > - Show Extensions Folder
-> - Go to "Brakets-wp-hint"
+> - Go to "brackets-tailwind-hint"
 > - Run `npm i` then `npm run sync` (if node_modules are installed);
 > - Wait for sync completed.
 
