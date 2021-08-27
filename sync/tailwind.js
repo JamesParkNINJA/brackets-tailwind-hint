@@ -16,7 +16,10 @@ const linkParser = htmlToJson.createParser([
   "#bs-classes a",
   {
     func: function($a) {
-      return $a.text();
+      var tempA = $a.text(),
+          newA = tempA.replace(/( \/ .*)/g, ''),
+          newA = newA.replace(/\./g, '');
+      return newA;
     }
   }
 ]);

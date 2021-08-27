@@ -6,7 +6,7 @@ define(function(require, exports, module) {
 
   var AppInit = brackets.getModule("utils/AppInit"),
     CodeHintManager = brackets.getModule("editor/CodeHintManager"),
-    WPfuncHint = require("text!./result.txt");
+    TWfuncHint = require("text!./lists/tailwind.txt");
 
   var lastLine,
     lastFileName,
@@ -48,7 +48,7 @@ define(function(require, exports, module) {
 
     // if it is not the same line as the last input - rebuild word list
     if (cursor.line != this.lastLine) {
-      var rawWordList = WPfuncHint.match(this.tokenDefinition);
+      var rawWordList = TWfuncHint.match(this.tokenDefinition);
       this.cachedWordList = [];
 
       rawWordList.forEach(word => {
@@ -166,6 +166,6 @@ define(function(require, exports, module) {
 
   AppInit.appReady(function() {
     var twHints = new twHints();
-    CodeHintManager.registerHintProvider(twHints, ["php"], 10);
+    CodeHintManager.registerHintProvider(twHints, ["tailwind"], 10);
   });
 });
